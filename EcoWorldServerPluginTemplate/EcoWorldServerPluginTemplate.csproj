@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Authors>MonzUn</Authors>
+    <Company>Eco World Mods</Company>
+    <Description>A template for making server plugins for Eco.</Description>
+    <AssemblyName>EWPlugin</AssemblyName>
+    <RootNamespace>EWServerPluginTemplate</RootNamespace>
+    <PackageId>EWServerPluginTemplate</PackageId>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="set server_dir=$(SolutionDir)..\Eco\Server\&#xD;&#xA;set server_mod_dir=$(SolutionDir)..\Eco\Server\Mods\EWPlugin\&#xD;&#xA;&#xD;&#xA;for /f &quot;tokens=*&quot; %25%25i in ($(SolutionDir)DLLCopyList.txt) DO (&#xD;&#xA;    xcopy /Y &quot;$(OutDir)%25%25i&quot; &quot;%25server_mod_dir%25&quot;&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;xcopy /Y &quot;$(OutDir)Eco.EM.Framework.dll&quot; &quot;%25server_dir%25\Mods\Elixr Mods&quot;&#xD;&#xA;xcopy /Y &quot;$(OutDir)EWPlugin.pdb&quot; &quot;%25server_dir%25&quot;" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="ElixrMods.Framework" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Eco.Core">
+      <HintPath>..\Dependencies\Eco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.Gameplay">
+      <HintPath>..\Dependencies\Eco.Gameplay.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.ModKit">
+      <HintPath>..\Dependencies\Eco.ModKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.Plugins">
+      <HintPath>..\Dependencies\Eco.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.Shared">
+      <HintPath>..\Dependencies\Eco.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.Simulation">
+      <HintPath>..\Dependencies\Eco.Simulation.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.Stats">
+      <HintPath>..\Dependencies\Eco.Stats.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.World">
+      <HintPath>..\Dependencies\Eco.World.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.WorldGenerator">
+      <HintPath>..\Dependencies\Eco.WorldGenerator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

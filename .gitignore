@@ -1,0 +1,9 @@
+# Ignore all binaries
+*.dll
+
+# Ignore generated files
+EcoWorldServerPluginTemplate/bin
+EcoWorldServerPluginTemplate/obj
+
+# Ignore all Visual Studio hidden files
+.vs/

@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "EcoWorldServerPluginTemplate": {
+      "commandName": "Executable",
+      "executablePath": "F:\\Workdir\\Eco\\Server\\bin\\Debug\\net5.0-windows\\EcoServer.exe",
+      "workingDirectory": "F:\\Workdir\\Eco\\Server\\bin\\Debug\\net5.0-windows"
+    }
+  }
+}
