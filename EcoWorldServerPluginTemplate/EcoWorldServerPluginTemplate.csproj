@@ -15,10 +15,8 @@
   </Target>
 
   <ItemGroup>
-    <PackageReference Include="ElixrMods.Framework" Version="3.1.4" />
-  </ItemGroup>
+    <PackageReference Include="ElixrMods.Framework" Version="3.2.1" />
 
-  <ItemGroup>
     <!-- Use locally built Eco dlls if available and dependency dir references otherwise -->
     <Reference Include="Eco.Core">
       <HintPath Condition="Exists('..\..\Eco\Server\Eco.Core\bin\Release\net5.0\Eco.Core.dll')">..\..\Eco\Server\Eco.Core\bin\Release\net5.0\Eco.Core.dll</HintPath>
